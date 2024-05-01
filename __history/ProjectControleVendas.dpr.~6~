@@ -1,0 +1,19 @@
+program ProjectControleVendas;
+
+uses
+  Vcl.Forms,
+  UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
+  UnitDmVendedor in 'Modelos\UnitDmVendedor.pas' {DmVendedor: TDataModule},
+  UnitClasseVendedor in 'Controles\UnitClasseVendedor.pas',
+  UnitCadastroVendedores in 'Cenarios\UnitCadastroVendedores.pas' {FormCadastroVendedores};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TDmVendedor, DmVendedor);
+  Application.CreateForm(TFormCadastroVendedores, FormCadastroVendedores);
+  Application.Run;
+end.
