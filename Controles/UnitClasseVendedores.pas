@@ -1,4 +1,4 @@
-unit UnitClasseVendedor;
+unit UnitClasseVendedores;
 
 interface
 

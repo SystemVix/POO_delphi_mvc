@@ -107,7 +107,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="Controles\UnitClasseVendedor.pas"/>
+        <DCCReference Include="Controles\UnitClasseVendedores.pas"/>
         <DCCReference Include="Cenarios\UnitCadastroVendedor.pas">
             <Form>FormCadastroVendedor</Form>
             <FormType>dfm</FormType>
@@ -117,7 +117,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="Controles\UnitClasseVenda.pas"/>
+        <DCCReference Include="Controles\UnitClasseVendas.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

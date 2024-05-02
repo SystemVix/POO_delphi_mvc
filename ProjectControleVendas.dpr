@@ -4,10 +4,10 @@ uses
   Vcl.Forms,
   UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
   UnitDmVendedor in 'Modelos\UnitDmVendedor.pas' {DmVendedor: TDataModule},
-  UnitClasseVendedor in 'Controles\UnitClasseVendedor.pas',
+  UnitClasseVendedores in 'Controles\UnitClasseVendedores.pas',
   UnitCadastroVendedor in 'Cenarios\UnitCadastroVendedor.pas' {FormCadastroVendedor},
   UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
-  UnitClasseVenda in 'Controles\UnitClasseVenda.pas';
+  UnitClasseVendas in 'Controles\UnitClasseVendas.pas';
 
 {$R *.res}
 
