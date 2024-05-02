@@ -48,7 +48,7 @@ implementation
 
 { TVendedor }
 
-uses UnitDmVendedor;
+uses UnitDmVendedores;
 
 procedure TVendedor.SetSalarioBruto(salario: Real);
 begin
@@ -125,10 +125,10 @@ var
   id : Integer;
 
 begin
-  if DmVendedor.Buscar(id, Self) then // falta Buscar no DmVendedor
+  if DmVendedor.Buscar(matricula, Self, id) then // falta Buscar no DmVendedor
   begin
     Result := True;
-    FId := id
+    FId := id;
   end
   else
   begin
@@ -139,10 +139,10 @@ end;
 
 function TVendedor.BuscarMatricula(id: Integer): Boolean;
 begin
-  if DmVendedor.BuscarMatricula(id, Self) then // falta BuscarMatricula no DmVendedor
+  if DmVendedor.BuscarMatricula(id, Self) then
   begin
     Result := True;
-    FId := id
+    FId := id;
   end
   else
   begin

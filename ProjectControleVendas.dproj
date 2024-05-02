@@ -102,7 +102,7 @@
             <Form>FormPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Modelos\UnitDmVendedor.pas">
+        <DCCReference Include="Modelos\UnitDmVendedores.pas">
             <Form>DmVendedor</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>

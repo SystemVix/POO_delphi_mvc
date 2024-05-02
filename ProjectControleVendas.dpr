@@ -3,7 +3,7 @@ program ProjectControleVendas;
 uses
   Vcl.Forms,
   UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
-  UnitDmVendedor in 'Modelos\UnitDmVendedor.pas' {DmVendedor: TDataModule},
+  UnitDmVendedores in 'Modelos\UnitDmVendedores.pas' {DmVendedor: TDataModule},
   UnitClasseVendedores in 'Controles\UnitClasseVendedores.pas',
   UnitCadastroVendedor in 'Cenarios\UnitCadastroVendedor.pas' {FormCadastroVendedor},
   UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
