@@ -6,7 +6,8 @@ uses
   UnitDmVendedor in 'Modelos\UnitDmVendedor.pas' {DmVendedor: TDataModule},
   UnitClasseVendedor in 'Controles\UnitClasseVendedor.pas',
   UnitCadastroVendedor in 'Cenarios\UnitCadastroVendedor.pas' {FormCadastroVendedor},
-  UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule};
+  UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
+  UnitClasseVenda in 'Controles\UnitClasseVenda.pas';
 
 {$R *.res}
 

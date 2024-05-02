@@ -3,14 +3,21 @@ unit UnitDmVendedor;
 interface
 
 uses
-  System.SysUtils, System.Classes;
+  System.SysUtils, System.Classes, Data.DB, IBX.IBCustomDataSet, IBX.IBQuery,
+  IBX.IBDatabase;
 
 type
   TDmVendedor = class(TDataModule)
+    Conexao: TIBDatabase;
+    Transacao: TIBTransaction;
+    QueryAcesso: TIBQuery;
+
   private
     { Private declarations }
+
   public
     { Public declarations }
+    //function Gravar(vendedor : TVendedor) : Boolean;
   end;
 
 var
