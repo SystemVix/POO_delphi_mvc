@@ -23,6 +23,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ButtonGravarClick(Sender: TObject);
+    procedure EditValorKeyPress(Sender: TObject; var Key: Char);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -78,6 +80,14 @@ begin
   end;
 end;
 
+procedure TFormCadastroVendas.EditValorKeyPress(Sender: TObject; var Key: Char);
+begin
+  if not (VarIsNumeric(Key) or (Key = #9) or (Key = ',') or (Key = #8)) then
+  begin
+    Key := #0;
+  end;
+end;
+
 procedure TFormCadastroVendas.EditVendaExit(Sender: TObject);
 begin
   if EditVenda.Text = '' then
@@ -95,6 +105,12 @@ begin
       ComboBoxVendedor.Text := venda.Vendedor.Nome;
     end;
   end;
+end;
+
+procedure TFormCadastroVendas.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := TCloseAction.caFree;
 end;
 
 procedure TFormCadastroVendas.FormCreate(Sender: TObject);

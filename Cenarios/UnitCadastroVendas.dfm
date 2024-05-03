@@ -10,6 +10,7 @@ object FormCadastroVendas: TFormCadastroVendas
   Font.Height = -23
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 168
@@ -94,6 +95,7 @@ object FormCadastroVendas: TFormCadastroVendas
     TabOrder = 0
     Text = 'EditVenda'
     OnExit = EditVendaExit
+    OnKeyPress = EditValorKeyPress
   end
   object EditValor: TEdit
     Left = 14
@@ -106,6 +108,7 @@ object FormCadastroVendas: TFormCadastroVendas
     Margins.Bottom = 5
     TabOrder = 1
     Text = 'EditValor'
+    OnKeyPress = EditValorKeyPress
   end
   object DateTimeData: TDateTimePicker
     Left = 14
