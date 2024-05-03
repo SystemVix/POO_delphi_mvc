@@ -44,9 +44,9 @@ end;
 procedure TFormPrincipal.MenuCadastrosVendedoresClick(Sender: TObject);
 
 var
-  formCadastro : TFormCadastroVendedores;
+  formCadastro : TFormCadastroVendedor;
 begin
-  formCadastro := TFormCadastroVendedores.Create(Application);
+  formCadastro := TFormCadastroVendedor.Create(Application);
 end;
 
 procedure TFormPrincipal.MenuConsultasComissoesClick(Sender: TObject);

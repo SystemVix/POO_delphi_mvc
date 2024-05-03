@@ -3,7 +3,7 @@ unit UnitClasseVendedores;
 interface
 
 uses
-  System.Classes, System.DateUtils;
+  System.Classes, System.DateUtils, DB;
 
 type
   TVendedor = class
@@ -39,16 +39,16 @@ type
     property Nome : string
       read FNome write FNome;
     property SalarioBruto : Real
-      read FSalarioBruto write FSalarioBruto;
+      read FSalarioBruto write SetSalarioBruto;
     property PercentualComissao : Real
-      read FPercentualComissao write FPercentualComissao;
+      read FPercentualComissao write SetPercentualComissao;
   end;
 
 implementation
 
 { TVendedor }
 
-uses UnitDmVendedores;
+uses UnitDmVendedores, UnitClasseVendas;
 
 procedure TVendedor.SetSalarioBruto(salario: Real);
 begin
@@ -83,18 +83,18 @@ var
   auxiliar : Integer;
   total : Real;
   listaVendas : TList;
-  //venda : TVenda; // falta criar a classe vendas
+  venda : TVenda;
 
 begin
   listaVendas := TList.Create;
-  //listaVendas := TVenda.ObterTotalVendas(data1, data2, Self.Id);
+  listaVendas := TVenda.ObterTotalVendas(data1, data2, Self.Id);
   total := 0;
 
   for auxiliar := 0 to listaVendas.Count - 1 do
   begin
-    //venda := listaVendas[auxiliar];
-    //total := total + venda.valor;
-    //venda.Free;
+    venda := listaVendas[auxiliar];
+    total := total + venda.valor;
+    venda.Free;
     listaVendas.Free;
     Result := total;
   end;
@@ -125,7 +125,7 @@ var
   id : Integer;
 
 begin
-  if DmVendedor.Buscar(matricula, Self, id) then // falta Buscar no DmVendedor
+  if DmVendedor.Buscar(matricula, Self, id) then
   begin
     Result := True;
     FId := id;
@@ -158,8 +158,7 @@ var
 
 begin
   listaVendedores := TList.Create;
-  DmVendedor.ObterVendedoresAtivos; // falta ObterVendedoresAtivos no DmVendedor
-
+  DmVendedor.ObterVendedoresAtivos;
   with DmVendedor.QueryAcesso do
   begin
     if RecordCount > 0 then
@@ -196,17 +195,5 @@ begin
   FSalarioBruto := 0;
   FPercentualComissao := 0;
 end;
-
-
-
-
-
-
-
-
-
-
-
-
 
 end.

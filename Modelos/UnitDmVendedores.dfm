@@ -3,6 +3,7 @@ object DmVendedor: TDmVendedor
   Width = 1960
   PixelsPerInch = 168
   object Conexao: TIBDatabase
+    LoginPrompt = False
     ServerType = 'IBServer'
     Left = 56
     Top = 56

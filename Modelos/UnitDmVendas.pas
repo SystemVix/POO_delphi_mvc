@@ -44,15 +44,46 @@ begin
       Conexao.Open;
       Transacao.StartTransaction;
     end;
+
     if QueryAcesso.Active then
     begin
       QueryAcesso.Close;
     end;
+
     QueryAcesso.SQL.Clear;
+
     if venda.Id <> 0 then
     begin
-      // parei aqui para fazer a ClasseVendas
+      QueryAcesso.SQL.Add('UPDATE VENDAS SL');
+      QueryAcesso.SQL.Add('SET SL."VENDEDOR" = :ITVENDEDOR,');
+      QueryAcesso.SQL.Add(' SL."NUMERO" = :ITNUMERO,');
+      QueryAcesso.SQL.Add(' SL."DATA" = :ITDATA,');
+      QueryAcesso.SQL.Add(' SL."VALOR" = :ITVALOR.');
+      QueryAcesso.SQL.Add('WHERE (SL."IDVENDA" = :ITID)');
+
+      QueryAcesso.Params.ParamByName('ITID').Value := venda.Id;
+      QueryAcesso.Params.ParamByName('ITVENDEDOR').Value := venda.Vendedor.Id;
+      QueryAcesso.Params.ParamByName('ITNUMERO').Value := venda.Numero;
+      QueryAcesso.Params.ParamByName('ITDATA').Value := venda.Data;
+      QueryAcesso.Params.ParamByName('ITVALOR').Value := venda.Valor;
+    end
+    else
+    begin
+      QueryAcesso.SQL.Add('INSERT INTO VENDAS');
+      QueryAcesso.SQL.Add('("VENDEDOR", "NUMERO", "DATA", "VALOR")');
+      QueryAcesso.SQL.Add('VALUES');
+      QueryAcesso.SQL.Add('(:ITVENDEDOR, :ITNUMERO, :ITDATA, :ITVALOR)');
+
+      QueryAcesso.Params.ParamByName('ITVENDEDOR').Value := venda.Vendedor.Id;
+      QueryAcesso.Params.ParamByName('ITNUMERO').Value := venda.Numero;
+      QueryAcesso.Params.ParamByName('ITDATA').Value := venda.Data;
+      QueryAcesso.Params.ParamByName('ITVALOR').Value := venda.Valor;
     end;
+
+    QueryAcesso.ExecSQL;
+    Transacao.Commit;
+    Result := True;
+
   except
     on e : Exception do
     begin

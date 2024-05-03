@@ -3,13 +3,13 @@ program ProjectControleVendas;
 uses
   Vcl.Forms,
   UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
-  UnitDmVendedores in 'Modelos\UnitDmVendedores.pas' {DmVendedor: TDataModule},
-  UnitClasseVendedores in 'Controles\UnitClasseVendedores.pas',
   UnitCadastroVendedores in 'Cenarios\UnitCadastroVendedores.pas' {FormCadastroVendedor},
-  UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
-  UnitClasseVendas in 'Controles\UnitClasseVendas.pas',
   UnitCadastroVendas in 'Cenarios\UnitCadastroVendas.pas' {FormCadastroVendas},
-  UnitConsultaComissoes in 'Cenarios\UnitConsultaComissoes.pas' {FormConsultaComissoes};
+  UnitConsultaComissoes in 'Cenarios\UnitConsultaComissoes.pas' {FormConsultaComissoes},
+  UnitClasseVendedores in 'Controles\UnitClasseVendedores.pas',
+  UnitClasseVendas in 'Controles\UnitClasseVendas.pas',
+  UnitDmVendedores in 'Modelos\UnitDmVendedores.pas' {DmVendedores: TDataModule},
+  UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule};
 
 {$R *.res}
 
