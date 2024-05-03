@@ -5,9 +5,10 @@ uses
   UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
   UnitDmVendedores in 'Modelos\UnitDmVendedores.pas' {DmVendedor: TDataModule},
   UnitClasseVendedores in 'Controles\UnitClasseVendedores.pas',
-  UnitCadastroVendedor in 'Cenarios\UnitCadastroVendedor.pas' {FormCadastroVendedor},
+  UnitCadastroVendedores in 'Cenarios\UnitCadastroVendedores.pas' {FormCadastroVendedor},
   UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
-  UnitClasseVendas in 'Controles\UnitClasseVendas.pas';
+  UnitClasseVendas in 'Controles\UnitClasseVendas.pas',
+  UnitCadastroVendas in 'Cenarios\UnitCadastroVendas.pas';
 
 {$R *.res}
 

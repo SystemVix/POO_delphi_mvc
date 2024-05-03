@@ -2,8 +2,8 @@ object FormCadastroVendedor: TFormCadastroVendedor
   Left = 0
   Top = 0
   Caption = 'Cadastro de Vendedores'
-  ClientHeight = 778
-  ClientWidth = 1108
+  ClientHeight = 776
+  ClientWidth = 1096
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
