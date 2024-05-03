@@ -122,6 +122,10 @@
             <Form>FormCadastroVendas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Cenarios\UnitConsultaComissoes.pas">
+            <Form>FormConsultaComissoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
