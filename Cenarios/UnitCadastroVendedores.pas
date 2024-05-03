@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TFormCadastroVendedor = class(TForm)
+  TFormCadastroVendedores = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -34,7 +34,7 @@ type
   end;
 
 var
-  FormCadastroVendedor: TFormCadastroVendedor;
+  FormCadastroVendedor: TFormCadastroVendedores;
 
 implementation
 
@@ -45,12 +45,12 @@ uses UnitClasseVendedores;
 var
   vendedor : TVendedor;
 
-procedure TFormCadastroVendedor.ButtonCancelarClick(Sender: TObject);
+procedure TFormCadastroVendedores.ButtonCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFormCadastroVendedor.ButtonGravarClick(Sender: TObject);
+procedure TFormCadastroVendedores.ButtonGravarClick(Sender: TObject);
 begin
   if (EditMatricula.Text <> '') and
      (EditNome.Text <> '') and
@@ -82,7 +82,7 @@ begin
   end;
 end;
 
-procedure TFormCadastroVendedor.EditMatriculaChange(Sender: TObject);
+procedure TFormCadastroVendedores.EditMatriculaChange(Sender: TObject);
 begin
   if Length(EditMatricula.Text) <> 4 then
   begin
@@ -102,7 +102,7 @@ begin
   end;
 end;
 
-procedure TFormCadastroVendedor.EditPercentualComissaoExit(Sender: TObject);
+procedure TFormCadastroVendedores.EditPercentualComissaoExit(Sender: TObject);
 begin
   if EditSalarioBruto.Text <> '' then
   begin
@@ -117,7 +117,7 @@ begin
   end;
 end;
 
-procedure TFormCadastroVendedor.EditSalarioBrutoExit(Sender: TObject);
+procedure TFormCadastroVendedores.EditSalarioBrutoExit(Sender: TObject);
 begin
   if EditSalarioBruto.Text <> '' then
   begin
@@ -132,7 +132,7 @@ begin
   end;
 end;
 
-procedure TFormCadastroVendedor.EditSalarioBrutoKeyPress(Sender: TObject;
+procedure TFormCadastroVendedores.EditSalarioBrutoKeyPress(Sender: TObject;
   var Key: Char);
 begin
   if not (VarIsNumeric(Key) or (Key = #9) or (Key = ',') or (Key = #8)) then
@@ -141,18 +141,18 @@ begin
   end;
 end;
 
-procedure TFormCadastroVendedor.FormClose(Sender: TObject;
+procedure TFormCadastroVendedores.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   Action := TCloseAction.caFree; // action := caFree;
 end;
 
-procedure TFormCadastroVendedor.FormCreate(Sender: TObject);
+procedure TFormCadastroVendedores.FormCreate(Sender: TObject);
 begin
   vendedor := TVendedor.Create;
 end;
 
-procedure TFormCadastroVendedor.FormDestroy(Sender: TObject);
+procedure TFormCadastroVendedores.FormDestroy(Sender: TObject);
 begin
   vendedor.Free;
 end;
