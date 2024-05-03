@@ -10,6 +10,8 @@ object FormCadastroVendas: TFormCadastroVendas
   Font.Height = -23
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 168
   TextHeight = 31
   object Label1: TLabel
@@ -91,6 +93,7 @@ object FormCadastroVendas: TFormCadastroVendas
     Margins.Bottom = 5
     TabOrder = 0
     Text = 'EditVenda'
+    OnExit = EditVendaExit
   end
   object EditValor: TEdit
     Left = 14
@@ -146,6 +149,7 @@ object FormCadastroVendas: TFormCadastroVendas
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
+    OnClick = ButtonGravarClick
   end
   object ButtonCancelar: TButton
     Left = 155
@@ -164,5 +168,6 @@ object FormCadastroVendas: TFormCadastroVendas
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
+    OnClick = ButtonCancelarClick
   end
 end
