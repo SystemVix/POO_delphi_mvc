@@ -1,30 +1,27 @@
-object FormCadastroVendedor: TFormCadastroVendedor
+object FormCadastroVendas: TFormCadastroVendas
   Left = 0
   Top = 0
-  Caption = 'Cadastro de Vendedores'
-  ClientHeight = 438
-  ClientWidth = 745
+  Caption = 'Cadastro de Vendas'
+  ClientHeight = 437
+  ClientWidth = 744
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -23
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnClose = FormClose
-  OnCreate = FormCreate
-  OnDestroy = FormDestroy
   PixelsPerInch = 168
   TextHeight = 31
   object Label1: TLabel
     Left = 14
     Top = 14
-    Width = 103
+    Width = 99
     Height = 31
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    Caption = 'Matr'#237'cula'
+    Caption = 'Venda N'#176
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -23
@@ -35,13 +32,13 @@ object FormCadastroVendedor: TFormCadastroVendedor
   object Label2: TLabel
     Left = 14
     Top = 104
-    Width = 65
+    Width = 50
     Height = 31
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    Caption = 'Nome'
+    Caption = 'Data'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -23
@@ -52,13 +49,13 @@ object FormCadastroVendedor: TFormCadastroVendedor
   object Label3: TLabel
     Left = 14
     Top = 194
-    Width = 141
+    Width = 55
     Height = 31
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    Caption = 'Sal'#225'rio Bruto'
+    Caption = 'Valor'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -23
@@ -69,13 +66,13 @@ object FormCadastroVendedor: TFormCadastroVendedor
   object Label4: TLabel
     Left = 14
     Top = 284
-    Width = 160
+    Width = 103
     Height = 31
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    Caption = '% de Comiss'#227'o'
+    Caption = 'Vendedor'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -23
@@ -83,7 +80,7 @@ object FormCadastroVendedor: TFormCadastroVendedor
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object EditMatricula: TEdit
+  object EditVenda: TEdit
     Left = 14
     Top = 55
     Width = 212
@@ -93,22 +90,9 @@ object FormCadastroVendedor: TFormCadastroVendedor
     Margins.Right = 5
     Margins.Bottom = 5
     TabOrder = 0
-    Text = 'EditMatricula'
-    OnChange = EditMatriculaChange
+    Text = 'EditVenda'
   end
-  object EditNome: TEdit
-    Left = 14
-    Top = 145
-    Width = 715
-    Height = 39
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
-    TabOrder = 1
-    Text = 'EditNome'
-  end
-  object EditSalarioBruto: TEdit
+  object EditValor: TEdit
     Left = 14
     Top = 235
     Width = 212
@@ -117,24 +101,33 @@ object FormCadastroVendedor: TFormCadastroVendedor
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    TabOrder = 2
-    Text = 'EditSalarioBruto'
-    OnExit = EditSalarioBrutoExit
-    OnKeyPress = EditSalarioBrutoKeyPress
+    TabOrder = 1
+    Text = 'EditValor'
   end
-  object EditPercentualComissao: TEdit
+  object DateTimeData: TDateTimePicker
     Left = 14
-    Top = 325
+    Top = 145
     Width = 212
     Height = 39
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
+    Date = 45415.000000000000000000
+    Time = 0.593910983792739000
+    TabOrder = 2
+  end
+  object ComboBoxVendedor: TComboBox
+    Left = 14
+    Top = 325
+    Width = 715
+    Height = 39
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
     TabOrder = 3
-    Text = 'EditPercentualComissao'
-    OnExit = EditPercentualComissaoExit
-    OnKeyPress = EditSalarioBrutoKeyPress
+    Text = 'ComboBoxVendedor'
   end
   object ButtonGravar: TButton
     Left = 14
@@ -153,7 +146,6 @@ object FormCadastroVendedor: TFormCadastroVendedor
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = ButtonGravarClick
   end
   object ButtonCancelar: TButton
     Left = 155
@@ -172,6 +164,5 @@ object FormCadastroVendedor: TFormCadastroVendedor
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    OnClick = ButtonCancelarClick
   end
 end

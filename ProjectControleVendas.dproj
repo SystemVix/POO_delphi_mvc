@@ -118,7 +118,10 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Controles\UnitClasseVendas.pas"/>
-        <DCCReference Include="Cenarios\UnitCadastroVendas.pas"/>
+        <DCCReference Include="Cenarios\UnitCadastroVendas.pas">
+            <Form>FormCadastroVendas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

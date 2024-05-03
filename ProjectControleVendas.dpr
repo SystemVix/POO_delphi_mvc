@@ -8,7 +8,7 @@ uses
   UnitCadastroVendedores in 'Cenarios\UnitCadastroVendedores.pas' {FormCadastroVendedor},
   UnitDmVendas in 'Modelos\UnitDmVendas.pas' {DmVendas: TDataModule},
   UnitClasseVendas in 'Controles\UnitClasseVendas.pas',
-  UnitCadastroVendas in 'Cenarios\UnitCadastroVendas.pas';
+  UnitCadastroVendas in 'Cenarios\UnitCadastroVendas.pas' {FormCadastroVendas};
 
 {$R *.res}
 
@@ -19,5 +19,6 @@ begin
   Application.CreateForm(TDmVendedor, DmVendedor);
   Application.CreateForm(TFormCadastroVendedor, FormCadastroVendedor);
   Application.CreateForm(TDmVendas, DmVendas);
+  Application.CreateForm(TFormCadastroVendas, FormCadastroVendas);
   Application.Run;
 end.
